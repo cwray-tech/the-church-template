@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
 
 import { PayloadRedirects } from '@/components/PayloadRedirects'
-import configPromise from '@payload-config'
-import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
-import { draftMode } from 'next/headers'
-import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
+import configPromise from '@payload-config'
+import { draftMode } from 'next/headers'
+import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
+import { cache } from 'react'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
-import { LivePreviewListener } from '@/components/LivePreviewListener'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -64,7 +64,6 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   const { hero, layout } = page
-
   return (
     <article className="pt-16 pb-24">
       <PageClient />
