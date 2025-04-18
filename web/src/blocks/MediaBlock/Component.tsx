@@ -1,67 +1,25 @@
-import type { StaticImageData } from 'next/image'
-
-import { cn } from '@/utilities/ui'
+'use client'
+import { Media } from '@/components/Media'
+import type { Media as MediaType } from '@/payload-types'
 import React from 'react'
-import RichText from '@/components/RichText'
 
-import type { MediaBlock as MediaBlockProps } from '@/payload-types'
-
-import { Media } from '../../components/Media'
-
-type Props = MediaBlockProps & {
-  breakout?: boolean
-  captionClassName?: string
-  className?: string
-  enableGutter?: boolean
-  imgClassName?: string
-  staticImage?: StaticImageData
-  disableInnerContainer?: boolean
+export type MediaBlockType = {
+  blockType?: 'media'
+  media?: MediaType
+  caption?: string
 }
 
-export const MediaBlock: React.FC<Props> = (props) => {
-  const {
-    captionClassName,
-    className,
-    enableGutter = true,
-    imgClassName,
-    media,
-    staticImage,
-    disableInnerContainer,
-  } = props
+export const MediaBlock: React.FC<MediaBlockType> = (props) => {
+  const { media, caption } = props
 
-  let caption
-  if (media && typeof media === 'object') caption = media.caption
+  if (!media) return null
 
   return (
-    <div
-      className={cn(
-        '',
-        {
-          container: enableGutter,
-        },
-        className,
-      )}
-    >
-      {(media || staticImage) && (
-        <Media
-          imgClassName={cn('border border-border rounded-[0.8rem]', imgClassName)}
-          resource={media}
-          src={staticImage}
-        />
-      )}
-      {caption && (
-        <div
-          className={cn(
-            'mt-6',
-            {
-              container: !disableInnerContainer,
-            },
-            captionClassName,
-          )}
-        >
-          <RichText data={caption} enableGutter={false} />
-        </div>
-      )}
+    <div className="my-8 lg:my-12 container">
+      <div className="p-6 lg:p-8 bg-background rounded-lg shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)]">
+        <Media resource={media} className="w-full h-auto" fill={false} />
+        {caption && <div className="mt-4 text-sm text-muted-foreground text-center">{caption}</div>}
+      </div>
     </div>
   )
 }

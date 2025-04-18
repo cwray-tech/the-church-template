@@ -1,21 +1,27 @@
+'use client'
+import { cn } from '@/utilities/ui'
 import React from 'react'
 
-import { Code } from './Component.client'
-
-export type CodeBlockProps = {
-  code: string
+export type CodeBlockType = {
+  blockType?: 'code'
+  code?: string
   language?: string
-  blockType: 'code'
 }
 
-type Props = CodeBlockProps & {
-  className?: string
-}
+export const Code: React.FC<CodeBlockType> = (props) => {
+  const { code, language } = props
 
-export const CodeBlock: React.FC<Props> = ({ className, code, language }) => {
+  if (!code) return null
+
   return (
-    <div className={[className, 'not-prose'].filter(Boolean).join(' ')}>
-      <Code code={code} language={language} />
+    <div className="my-8 lg:my-12 container">
+      <div className="p-6 lg:p-8 bg-background rounded-lg shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)]">
+        <pre className="overflow-x-auto">
+          <code className={cn('block p-4 rounded-lg', language && `language-${language}`)}>
+            {code}
+          </code>
+        </pre>
+      </div>
     </div>
   )
 }
