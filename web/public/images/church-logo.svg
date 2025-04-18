@@ -1,0 +1,11 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cross -->
+  <path d="M20 5L25 15H15L20 5Z" fill="currentColor"/>
+  <rect x="18" y="15" width="4" height="20" fill="currentColor"/>
+  <rect x="10" y="25" width="20" height="4" fill="currentColor"/>
+
+  <!-- Church Name -->
+  <text x="40" y="28" font-family="Playfair Display, serif" font-size="20" font-weight="bold" fill="currentColor">
+    Church Name
+  </text>
+</svg>
