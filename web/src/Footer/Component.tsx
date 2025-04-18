@@ -24,7 +24,7 @@ export async function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col-reverse items-start md:flex-row flex-shrink-0 gap-12 md:items-start">
+        <div className="flex flex-col-reverse items-start md:flex-row gap-8 md:items-start">
           <div className="flex flex-col gap-4">
             <h3 className="font-serif text-lg font-medium">Quick Links</h3>
             <nav className="flex flex-col gap-2">
