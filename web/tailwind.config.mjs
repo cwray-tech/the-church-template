@@ -1,5 +1,5 @@
-import tailwindcssAnimate from 'tailwindcss-animate'
 import typography from '@tailwindcss/typography'
+import tailwindcssAnimate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -94,8 +94,9 @@ const config = {
         warning: 'hsl(var(--warning))',
       },
       fontFamily: {
+        serif: ['var(--font-playfair)', 'serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-geist-mono)'],
-        sans: ['var(--font-geist-sans)'],
       },
       keyframes: {
         'accordion-down': {
@@ -114,8 +115,43 @@ const config = {
               '--tw-prose-body': 'var(--text)',
               '--tw-prose-headings': 'var(--text)',
               h1: {
+                fontFamily: 'var(--font-playfair), serif',
                 fontWeight: 'normal',
                 marginBottom: '0.25em',
+              },
+              h2: {
+                fontFamily: 'var(--font-playfair), serif',
+                fontWeight: 'normal',
+              },
+              h3: {
+                fontFamily: 'var(--font-playfair), serif',
+                fontWeight: 'normal',
+              },
+              p: {
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                lineHeight: '1.75',
+                fontSize: '1rem',
+                marginTop: '1.25em',
+                marginBottom: '1.25em',
+              },
+              'ul, ol': {
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                lineHeight: '1.75',
+                fontSize: '1rem',
+                marginTop: '1.25em',
+                marginBottom: '1.25em',
+              },
+              li: {
+                marginTop: '0.5em',
+                marginBottom: '0.5em',
+              },
+              a: {
+                color: 'hsl(var(--primary))',
+                textDecoration: 'underline',
+                fontWeight: '500',
+                '&:hover': {
+                  color: 'hsl(var(--primary) / 0.9)',
+                },
               },
             },
           ],
@@ -130,6 +166,9 @@ const config = {
                 fontSize: '1.25rem',
                 fontWeight: 600,
               },
+              p: {
+                fontSize: '0.95rem',
+              },
             },
           ],
         },
@@ -141,6 +180,9 @@ const config = {
               },
               h2: {
                 fontSize: '1.5rem',
+              },
+              p: {
+                fontSize: '1rem',
               },
             },
           ],
