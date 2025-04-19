@@ -1,0 +1,10 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cross -->
+  <rect x="18" y="5" width="4" height="30" fill="hsl(35, 25%, 15%)" opacity="0.8"/>
+  <rect x="8" y="15" width="24" height="4" fill="hsl(35, 25%, 15%)" opacity="0.8"/>
+
+  <!-- Church Name -->
+  <text x="40" y="28" font-family="Playfair Display, serif" font-size="20" font-weight="bold" fill="hsl(35, 25%, 15%)" opacity="0.8">
+    Church Name
+  </text>
+</svg>
