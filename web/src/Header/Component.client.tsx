@@ -41,7 +41,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
               <Logo
                 loading="eager"
                 priority="high"
-                className="invert dark:invert-0 transition-transform group-hover:scale-105"
+                className="transition-transform group-hover:scale-105"
               />
               <span className="hidden md:inline-block text-sm font-serif text-muted-foreground italic">
                 Welcome Home
