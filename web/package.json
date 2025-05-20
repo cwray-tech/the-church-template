@@ -1,7 +1,7 @@
 {
-  "name": "the-church-template",
+  "name": "web-church-template",
   "version": "1.0.0",
-  "description": "Website template for Payload",
+  "description": "CMS and website for churches. This is the web application for the church template.",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -71,10 +71,5 @@
   "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp"
-    ]
   }
 }
